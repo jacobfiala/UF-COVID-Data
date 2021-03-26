@@ -47,7 +47,9 @@ Again, I scrape data from two graphs. They are both under the "Testing" Section.
 
 I scrape data from UF Health's 3 main laboratories in the section of the report titled "COVID-19: testing by laboratory"
  
-  - These 3 main labs (UF Health Medical Lab, UF Health Shands Hospital, UF Health Jacksonville) began to be included in these reports on 11/5/20 (summarizing the data for 11/4/20). So this data begins at this point.
+  - Please note that I attribute results to the *date listed on the second line of the reports as "Data through XXX"*, not by (1) the date listed as "verified as of XXX" nor by (2) the date the report was uploaded. If 2 were reports were released on a single day (e.g., AM and PM; common with earlier reports), I used the totals in the later report (e.g., PM).
+ 
+  - In the reports dated 11/5/20 to present, the 3 main labs are titled "UF Health Medical Lab", "UF Health Shands Hospital", "UF Health Jacksonville". Prior to 11/5/20, they were respectively titled "UF Pathlabs", "Shands at the University of Florida", and "Shands Jacksonville Medical Center Inc."
   
   - Daily totals are calculated by subtracting the cumulative total on one day from the cumulative total on the previous day (i.e., the amount of test results added to the running total on that day).
   
@@ -55,4 +57,9 @@ I scrape data from UF Health's 3 main laboratories in the section of the report 
   
   - A major advantage of this data, as noted in the reports, is that it includes the results of both Florida and non-Florida residents, meaning that it captures UF Affiliates who are not legal residents of Florida.
   
-  - It's worth noting that UF Health Laboratories are likely also processing the tests of community members who are not UF Affiliates. However, it is worth noting that it has been previously reported that UF Student and Faculty tests are processed at UF Health Medical Lab (https://www.firstcoastnews.com/article/entertainment/television/programs/gmj/a-behind-the-scenes-look-at-uf-health-covid-19-testing/77-bb0016fa-75d2-41bf-b7b6-9241cc2e0da7). So it might be safe to presume that the majority of tests processed by this lab belong to UF Affiliates.
+  - It's worth noting that UF Health Laboratories are likely also processing the tests of community members who are not UF Affiliates. However, it is worth noting that it has been previously reported that UF Student and Faculty tests are processed at UF Health Medical Lab (https://www.firstcoastnews.com/article/entertainment/television/programs/gmj/a-behind-the-scenes-look-at-uf-health-covid-19-testing/77-bb0016fa-75d2-41bf-b7b6-9241cc2e0da7). So it might be safe to presume that the majority of tests processed by this lab belong to UF Affiliates, especially following 8/31/20, when all students and faculty had been returned to campus.
+
+  - There are a few idiosyncracies to be aware of in these data, which can complicate time-series graphs and analyses of the data:
+    - From 5/11 to 5/12, the cumulative count at Shands drops sharply while the count at UF Health Medical Lab jumps sharply, implying that about 2,000 tests were re-attributed  to UF Health Medical Lab as opposed to Shands. This implies that, before 5/12, UF Health Medical Lab totals were an under-representation and Shands totals were an over-representation. Notably, this causes a few days to have negative case counts, since the cumulative totals decreased rather than increased on that day.
+    - Conversely, from 7/5 to 7/6, the total for UF Health Medical Lab dropped sharply while Shands total increased sharply, again seeming to imply a re-attribution of tests, this time to Shands from UF Health Medical lab.
+    - Finally, from 6/25 to 6/28, all three lab totals stopped increasing, and a new lab titled "UF_Health" began recording numbers rapidly, only to disappear from the reports on 6/30- at which point all three labs jumped sharply back up and began increasing again. I interpret this to mean that UF briefly began reporting all 3 labs together under an umbrella term called "UF_Health" but quickly changed back to reporting seperately, re-attributing the UF_Health cases back to their corresponding individual lab. Notably, this causes the data of the 3 labs to have a 4 day period of no results, followed by a day with a huge jump in tests.
